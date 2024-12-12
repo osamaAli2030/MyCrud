@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="w-75 m-auto py-5">
+      <div class="alert alert-danger" id="alert"></div>
+
+      <div class="mb-4">
+        <label class="mb-3 fs-5 text-info" for="ProdName">Product Name</label>
+        <input
+          onkeyup="ValidateName();"
+          class="form-control"
+          type="text"
+          id="ProdName"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="mb-3 fs-5 text-info" for="ProdPrice">Product Price</label>
+        <input class="form-control" type="number" id="ProdPrice" />
+      </div>
+      <div class="mb-4">
+        <label class="mb-3 fs-5 text-info" for="ProdCategory"
+          >Product Category</label
+        >
+        <input class="form-control" type="text" id="ProdCategory" />
+      </div>
+      <div class="mb-4">
+        <label class="mb-3 fs-5 text-info" for="ProdDescription"
+          >Product Description</label
+        >
+        <textarea
+          class="form-control"
+          type="text"
+          id="ProdDescription"
+        ></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="productImg" class="mb-3 fs-5 text-info">productImg</label>
+        <input type="file" class="form-control" id="productImg" />
+      </div>
+
+      <button
+        id="btnAddUpdate"
+        onclick="AddProduct();"
+        class="btn btn-outline-info"
+      >
+        Add Product
+      </button>
+    </div>
+
+    <div class="w-75 m-auto py-3">
+      <input
+        onkeyup="searchProduct(this.value);"
+        class="form-control"
+        placeholder="search ..."
+        type="text"
+        id="searchInput"
+      />
+    </div>
+
+    <table class="table my-5 mx-5 text-center table table-hover">
+      <thead>
+        <th>index</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>image</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </thead>
+
+      <tbody id="tableBody">
+        <tr>
+          <td>0</td>
+          <td>Toshiba</td>
+          <td>4500</td>
+          <td>Electric Devices</td>
+          <td>goods ..</td>
+          <td>
+            <img
+              src="Images/Products/car.webp"
+              alt="Product Image"
+              width="50"
+              height="50"
+            />
+          </td>
+          <td>
+            <button class="btn btn-outline-warning" onclick="Edit(0)" ;>
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-outline-danger" onclick="DeleteProduct(0);">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
